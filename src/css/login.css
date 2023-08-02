@@ -16,7 +16,9 @@ a {
   z-index: 100;
   padding: 0 20px;
 }
-
+.name {
+  color: red;
+}
 .nav {
   max-width: 1100px;
   width: 100%;
@@ -85,7 +87,7 @@ a {
 /* From */
 .form_container {
   position: fixed;
-  max-width: 320px;
+  max-width: 400px;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -218,7 +220,21 @@ a {
 .bld {
   color: limegreen;
 }
-
+.intro {
+  font-size: 20px;
+  color: white;
+  padding-left: 150px;
+  padding-top: 50px;
+}
+.hello {
+  font-size: 30px;
+}
+.gr {
+  color: limegreen;
+}
+.high {
+  color: yellow;
+}
 .swing {
   animation: swing ease-in-out 1s infinite alternate;
   transform-origin: center -20px;

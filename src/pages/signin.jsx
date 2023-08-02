@@ -4,9 +4,18 @@ import { useEffect, useState } from "react";
 import { logo } from "../images/img";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import loginvalidate from "../mysql/loginvalidate";
-
+import axios from "axios";
 const SignIn = () => {
   const [log, setlog] = useState({ mail: "", pass: "" });
+  const [signup, setsignup] = useState({
+    uname: "",
+    mail: "",
+    pass: "",
+    cname: "",
+    gno: "",
+    add: "",
+    pno: "",
+  });
   const his = useHistory();
   useEffect(() => {
     const formOpenBtn = document.querySelector("#form-open");
@@ -71,7 +80,63 @@ const SignIn = () => {
       alert("Login Invalid");
     }
   };
+  console.log(signup);
+  const handlesuser = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.uname = ev.target.value;
+    setsignup(t);
+  };
 
+  const handlesmail = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.mail = ev.target.value;
+    setsignup(t);
+  };
+
+  const handlespass = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.pass = ev.target.value;
+    setsignup(t);
+  };
+
+  const handlescname = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.cname = ev.target.value;
+    setsignup(t);
+  };
+
+  const handlesgno = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.gno = ev.target.value;
+    setsignup(t);
+  };
+
+  const handlesadd = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.add = ev.target.value;
+    setsignup(t);
+  };
+
+  const handlespno = (ev) => {
+    ev.preventDefault();
+    const t = { ...signup };
+    t.pno = ev.target.value;
+    setsignup(t);
+  };
+
+  const handleSignUp = (ev) => {
+    ev.preventDefault();
+    axios
+      .post("http://localhost:8081/wareup", signup)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <header class="header">
@@ -105,6 +170,20 @@ const SignIn = () => {
           <div class="swing">
             <img src={logo} width="600" height="400" alt="" />
           </div>
+          <center>
+            <h2 class="intro">
+              <b class="hello">😊𝑯𝒆𝒍𝒍𝒐!</b> <br />
+              <br />{" "}
+              <pre>
+                𝑨𝒓𝒆 𝒚𝒐𝒖 𝒕𝒆𝒏𝒔𝒆𝒅 𝒂𝒃𝒐𝒖𝒕 <b class="high">𝒎𝒂𝒊𝒏𝒕𝒂𝒊𝒏𝒊𝒏𝒈 𝒔𝒕𝒐𝒄𝒌𝒔?</b>
+              </pre>
+              <b class="high">𝑫𝒐𝒏'𝒕 𝒘𝒐𝒓𝒓𝒚</b>
+              <b class="gr">!</b> 𝑾𝒆 𝒂𝒓𝒆 𝒉𝒆𝒓𝒆 𝒇𝒐𝒓 𝒚𝒐𝒖 𝒕𝒐{" "}
+              <b class="gr">𝒔𝒊𝒎𝒑𝒍𝒊𝒇𝒚</b>
+              <br />
+              Ｌｅｔ＇ｓ　Ｇｏ!!!
+            </h2>
+          </center>
         </div>
       </header>
 
@@ -115,7 +194,6 @@ const SignIn = () => {
           <div class="form login_form">
             <form>
               <h2>Login</h2>
-
               <div class="input_box">
                 <input
                   type="email"
@@ -154,12 +232,14 @@ const SignIn = () => {
           </div>
 
           <div class="form signup_form">
-            <form action="signup_process.php" method="post">
+            <form>
               <h2>Signup</h2>
               <div class="input_box">
                 <input
                   type="text"
                   name="username"
+                  value={signup.uname}
+                  onChange={handlesuser}
                   placeholder="Enter your username"
                   required
                 />
@@ -169,6 +249,8 @@ const SignIn = () => {
                 <input
                   type="email"
                   name="email"
+                  value={signup.mail}
+                  onChange={handlesmail}
                   placeholder="Enter your email"
                   required
                 />
@@ -178,6 +260,8 @@ const SignIn = () => {
                 <input
                   type="password"
                   name="password"
+                  value={signup.pass}
+                  onChange={handlespass}
                   placeholder="Create password"
                   required
                 />
@@ -186,19 +270,55 @@ const SignIn = () => {
               </div>
               <div class="input_box">
                 <input
-                  type="password"
-                  placeholder="Confirm password"
+                  type="text"
+                  name="cname"
+                  value={signup.cname}
+                  onChange={handlescname}
+                  placeholder="Company Name"
                   required
                 />
-                <i className="uil uil-lock password"></i>
-                <i className="uil uil-eye-slash pw_hide"></i>
+                <i className="uil uil-store-alt email"></i>
               </div>
-
+              <div class="input_box">
+                <input
+                  type="text"
+                  name="gno"
+                  value={signup.gno}
+                  onChange={handlesgno}
+                  placeholder="GST Number"
+                  required
+                />
+                <i className="uil uil-credit-card email"></i>
+              </div>
+              <div class="input_box">
+                <input
+                  type="text"
+                  name="add"
+                  value={signup.add}
+                  onChange={handlesadd}
+                  placeholder="Address"
+                  required
+                />
+                <i className="uil uil-at email"></i>
+              </div>
+              <div class="input_box">
+                <input
+                  type="text"
+                  name="pno"
+                  value={signup.pno}
+                  onChange={handlespno}
+                  placeholder="Phone Number"
+                  required
+                />
+                <i className="uil uil-phone email"></i>
+              </div>
               <input
                 type="submit"
                 name="submit"
                 value="SignUp"
                 class="button"
+                id="login"
+                onClick={handleSignUp}
               />
 
               <div class="login_signup">

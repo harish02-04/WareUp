@@ -7,6 +7,7 @@ const loginvalidate = (d) => {
         if (k.email === d.mail && k.password === d.pass) {
           localStorage.setItem("auth", true);
           localStorage.setItem("user", k.username);
+          localStorage.setItem("cname", k.cname);
         }
       })
     )
