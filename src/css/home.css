@@ -164,6 +164,7 @@
 }
 .card {
   width: 800px;
+  border: 3px solid black;
   height: 450px;
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.7), 0 17px 17px 0 rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -366,7 +367,8 @@
   font-size: 40px;
 }
 .pn {
-  text-decoration: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: #ff2a09;
 }
 .mainp,
 .ip {
@@ -378,4 +380,221 @@
 }
 .ip1 {
   width: 200px;
+}
+.name {
+  font-family: "Times New Roman", Times, serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+.con {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  width: 1000px;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+.con {
+  padding: 100px 9%;
+  padding-bottom: 100px;
+}
+
+.hp {
+  top: 2%;
+  left: 20%;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  font-size: 40px;
+}
+
+.con .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 15px;
+}
+
+.con .box-container .box {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.con .box-container .box img {
+  height: 200px;
+  width: 200px;
+}
+
+.con .box-container .box h3 {
+  color: #444;
+  font-size: 22px;
+  padding: 10px 0;
+}
+
+.con .box-container .box p {
+  color: #777;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.con .box-container .box .btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 8px 25px;
+}
+
+.con .box-container .box .btn:hover {
+  letter-spacing: 1px;
+}
+
+.con .box-container .box:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .con {
+    padding: 20px;
+  }
+}
+.sec1 {
+  overflow: auto;
+}
+.bodyh,
+.headh {
+  position: sticky;
+}
+
+/*Shop*/
+.popup-container {
+  display: none;
+  position: fixed;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+/* Style for the popup content */
+
+/* Style for the close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+
+.popup-content input {
+  height: 250%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+
+.addp {
+  background: #7d2ae8;
+  margin-top: 30px;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: 0px;
+}
+.i1 {
+  position: absolute;
+  top: 18%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 25px;
+}
+.i2 {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 25px;
+}
+.i3 {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 25px;
+}
+.i4 {
+  position: absolute;
+  top: 54%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 20px;
+}
+.i5 {
+  position: absolute;
+  top: 65%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 20px;
+}
+.i6 {
+  position: absolute;
+  top: 77%;
+  transform: translateY(-50%);
+  left: 17px;
+  color: #777;
+  font-size: 23px;
+}
+.asap {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.asap,
+.hp {
+  display: flex;
+  flex-direction: row;
+}
+.tops {
+  position: relative;
+  top: 1%;
+}
+.dis {
+  font-size: 15px;
+  color: red;
+  text-decoration: none;
+  word-spacing: 8px;
 }

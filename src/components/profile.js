@@ -19,7 +19,7 @@ const Profile = () => {
       <div class="container">
         <div class="card">
           <div class="front">
-            <h2 class="fp">𝑷𝒓𝒐𝒇𝒊𝒍𝒆</h2>
+            <h2 class="fp">𝑷𝒓𝒐𝒇𝒊𝒍𝒆 𝑪𝒂𝒓𝒅</h2>
             <div class="logo">
               <span></span>
             </div>
@@ -31,7 +31,8 @@ const Profile = () => {
               </div>
               <span>
                 <h2 class="name">{`${pro.cname}`}</h2>
-                <h6>GST No:{pro.gno}</h6>
+                <br />
+                <h6>GST No - {pro.gno}</h6>
                 <br />
                 <b class="own">𝑶𝒘𝒏𝒆𝒅 𝒃𝒚</b>
                 <br />

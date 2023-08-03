@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { user } from "../images/img";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../components/profile";
+import Shop from "../components/shop";
 const Home = () => {
   const his = useHistory();
   const [logout, setlogout] = useState(false);
@@ -31,8 +32,22 @@ const Home = () => {
   };
   const handleprofile = (ev) => {
     ev.preventDefault();
-    const t = { ...nav };
-    t.profile = true;
+    const t = {
+      pro: true,
+      shop: false,
+      purchase: false,
+      orders: false,
+    };
+    setnav(t);
+  };
+  const handleshop = (ev) => {
+    ev.preventDefault();
+    const t = {
+      pro: false,
+      shop: true,
+      purchase: false,
+      orders: false,
+    };
     setnav(t);
   };
   return (
@@ -67,7 +82,7 @@ const Home = () => {
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="#" onClick={handleshop}>
                 <i class="uil uil-shop" aria-hidden="true"></i>
                 <span>My Shop</span>
               </a>
@@ -94,7 +109,11 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-        <section class="sec1">{nav.profile && <Profile></Profile>}</section>
+
+        <section class="sec1">
+          {nav.pro && <Profile></Profile>}
+          {nav.shop && <Shop></Shop>}
+        </section>
       </div>
     </div>
   );

@@ -133,7 +133,7 @@ const SignIn = () => {
   const handleSignUp = (ev) => {
     ev.preventDefault();
     axios
-      .post("http://localhost:8081/wareup", signup)
+      .post("http://localhost:8081/signup", signup)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
