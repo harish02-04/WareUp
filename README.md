@@ -1,4 +1,4 @@
-# WareUp
+#🛒 WareUp
 
 **WareUp** is an inventory management system designed to streamline inventory management for suppliers and shopkeepers. This React-based frontend application allows users to efficiently manage their stock, track inventory levels, and interact with suppliers.
 
